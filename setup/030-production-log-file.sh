@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-production_log_file="./app/production.log"
+production_log_file="./production.log"
 production_log_user="www-data"
 production_log_group="www-data"
 
