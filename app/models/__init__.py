@@ -1,7 +1,8 @@
 from flask.ext.sqlalchemy import SQLAlchemy
 from .. import app
-from .. database import config
 
 
-app.config.update(config)
+app.config.from_object('app.config')
+
+
 db = SQLAlchemy(app)
