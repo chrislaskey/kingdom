@@ -1,3 +1,4 @@
 *.pyc
 .coverage
 production.log
+app.db
