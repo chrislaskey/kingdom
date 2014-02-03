@@ -1,0 +1,4 @@
+flask-restful
+Flask-SQLAlchemy
+nose
+coverage
