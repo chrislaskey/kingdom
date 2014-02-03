@@ -1,4 +1,5 @@
 flask-restful
 Flask-SQLAlchemy
+Flask-Mail
 nose
 coverage
