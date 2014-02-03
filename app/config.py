@@ -4,10 +4,18 @@ from os import path
 basedir = path.abspath(path.dirname(__file__))
 
 
+# Flask
+# See: http://flask.pocoo.org/docs/config/
 DEBUG = True
 TESTING = False
 SECRET_KEY = 'Academicam omnem quaestionem duabus formis a Cicerone esse expositam olim cognitum est'
-SQLALCHEMY_DATABASE_URI = 'sqlite:///' + path.join(basedir, 'app.db')
+
+# Flask-SQLAlchemy
+# See: http://pythonhosted.org/Flask-SQLAlchemy/config.html
+SQLALCHEMY_DATABASE_URI = 'sqlite:///' + path.join(basedir, '../app.db')
+
+# Flask-Mail
+# See: http://pythonhosted.org/flask-mail/
 MAIL_SERVER = 'localhost'
 MAIL_PORT = 25
 MAIL_USE_TLS = False
