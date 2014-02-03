@@ -29,6 +29,8 @@ MAIL_SUPPRESS_SEND = TESTING
 
 # Flask-Security
 # See: http://pythonhosted.org/Flask-Security/configuration.html
-SECURITY_PASSWORD_HASH = 'bcrypt'
-SECURITY_PASSWORD_SALT = 'SnK2na02nlnmsWsna01nvmac1SNAncKS9acn3m11aZmQEiAk9314jXma'
-SECURITY_EMAIL_SENDER = 'no-reply@localhost'
+# TODO: Turn these values on
+
+# SECURITY_PASSWORD_HASH = 'bcrypt'
+# SECURITY_PASSWORD_SALT = 'SnK2na02nlnmsWsna01nvmac1SNAncKS9acn3m11aZmQEiAk9314jXma'
+# SECURITY_EMAIL_SENDER = 'no-reply@localhost'
