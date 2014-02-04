@@ -8,5 +8,3 @@ from app.models import security
 from app.security import user_datastore
 
 db.create_all()
-user_datastore.create_user(email='contact@chrislaskey.com', password='test')
-db.session.commit()
