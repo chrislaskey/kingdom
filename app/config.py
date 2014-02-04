@@ -29,8 +29,6 @@ MAIL_SUPPRESS_SEND = TESTING
 
 # Flask-Security
 # See: http://pythonhosted.org/Flask-Security/configuration.html
-# TODO: Turn these values on
-
 SECURITY_PASSWORD_HASH = 'bcrypt'
 SECURITY_PASSWORD_SALT = 'SnK2na02nlnmsWsna01nvmac1SNAncKS9acn3m11aZmQEiAk9314jXma'
 SECURITY_EMAIL_SENDER = 'no-reply@localhost'
@@ -47,3 +45,7 @@ SECURITY_CONFIRMABLE = True
 SECURITY_CONFIRM_URL = '/signup/confirm'
 SECURITY_CONFIRM_EMAIL_WITHIN = '7 days'
 SECURITY_LOGIN_WITHOUT_CONFIRMATION = DEBUG
+
+# Flask-WTF
+# See: https://flask-wtf.readthedocs.org/en/latest/
+CSRF_ENABLED = True
