@@ -1,5 +1,6 @@
 flask-restful
 Flask-SQLAlchemy
 Flask-Security
+py-bcrypt
 nose
 coverage
