@@ -1,0 +1,15 @@
+html,
+body {
+	font-size: 15px;
+	height: 100%;
+}
+
+body {
+	background: #fff;
+	color: #555555;
+	font-family: "Droid serif", "Georgia", sans-serif;
+	margin: 0px;
+	min-width: 320px;
+	padding: 0px;
+	text-rendering: optimizeLegibility;
+}
