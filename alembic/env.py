@@ -5,6 +5,7 @@
 # See:
 # http://mattupstate.com/python/databases/2012/11/15/database-migrations-with-alembic-sqlalchemy-and-flask.html
 # http://stackoverflow.com/questions/11276017/request-a-simple-alembic-working-example-for-auto-generating-migrations
+# http://stackoverflow.com/questions/17201800/alembic-autogenerates-empty-flask-sqlalchemy-migrations
 
 from __future__ import with_statement
 from alembic import context
@@ -26,7 +27,7 @@ fileConfig(config.config_file_name)
 # for 'autogenerate' support
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
-from app.models import db
+from app.models import app, db
 target_metadata = db.metadata
 
 # other values from the config, defined by the needs of env.py,
@@ -59,12 +60,11 @@ def run_migrations_online():
     and associate a connection with the context.
 
     """
-    alembic_config = config.get_section(config.config_ini_section)
-    from app import config as app_config
-    alembic_config['sqlalchemy.url'] = app_config.SQLALCHEMY_DATABASE_URI
+    config.set_main_option('sqlalchemy.url',
+                            app.config['SQLALCHEMY_DATABASE_URI'])
 
     engine = engine_from_config(
-                alembic_config,
+                config.get_section(config.config_ini_section),
                 prefix='sqlalchemy.',
                 poolclass=pool.NullPool)
 
