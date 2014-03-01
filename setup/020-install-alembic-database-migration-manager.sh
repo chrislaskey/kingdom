@@ -28,9 +28,20 @@ copy_alembic_env_file () {
 	fi
 }
 
+update_alembic_ini_script_location () {
+	if [[ ! -f "${alembic_ini_file_target}" ]]; then
+		return 0
+	fi
+
+	if ! sed -i'' -e "s#script_location.*#script_location = ${alembic_target_path}#" "${alembic_ini_file_target}"; then
+		error "Could not update script_location value in alembic.ini file, 'sed -i'' 's#^script_location.*#script_location = ${alembic_target_path}#' ${alembic_ini_file_target}'."
+	fi
+}
+
 copy_alembic_ini_file () {
 	if [[ ! -f "${alembic_ini_file_source}" ]]; then
-		return 0
+		update_alembic_ini_script_location
+		return $?
 	fi
 
 	if ! cp "${alembic_ini_file_source}" "${alembic_ini_file_target}"; then
