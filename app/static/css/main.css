@@ -5,6 +5,8 @@ body {
 }
 
 body {
+	background: #5a7da3;
+	background: #88C95D;
 	background: #f2f2f2;
 	color: #555555;
 	font-family: "Droid serif", "Georgia", sans-serif;
@@ -17,4 +19,12 @@ body {
 .flashes{
 	margin-bottom:1.5em;
 	margin-top:1.5em;
+}
+
+.main.has_footer {
+	padding-bottom:40px;
+}
+
+.fixed.footer{
+	bottom:0px;
 }
