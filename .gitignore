@@ -2,3 +2,4 @@
 .coverage
 production.log
 app.db
+todo.txt
