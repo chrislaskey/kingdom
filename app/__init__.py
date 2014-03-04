@@ -9,4 +9,5 @@ app.config.from_object('app.config')
 from . import models
 from . import api
 from . import mail
+from . import security
 from . import views
