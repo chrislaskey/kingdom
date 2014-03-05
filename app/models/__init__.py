@@ -5,4 +5,5 @@ from .. import app
 db = SQLAlchemy(app)
 
 
+from . import db_helpers
 from . import users
