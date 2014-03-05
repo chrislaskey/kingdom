@@ -6,4 +6,5 @@ db = SQLAlchemy(app)
 
 
 from . import db_helpers
+from . import games
 from . import users
