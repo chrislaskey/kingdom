@@ -9,6 +9,7 @@
 		{{ create_game_form.hidden_tag() }}
 		{{ render_field_with_errors(create_game_form.game_name) }}
 		{{ render_field_with_errors(create_game_form.game_type) }}
+		{{ render_field_with_errors(create_game_form.game_description) }}
 		{{ render_field(create_game_form.submit) }}
 		<a href="/" class="ui button">Cancel</a>
 	</form>
