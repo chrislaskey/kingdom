@@ -1,5 +1,6 @@
 from flask.ext.security import UserMixin
 from . import db
+from . games import games_users
 from . roles import roles_users
 
 
@@ -15,4 +16,6 @@ class User(db.Model, UserMixin):
     current_login_ip = db.Column(db.String(255))
     login_count = db.Column(db.Integer)
     roles = db.relationship('Role', secondary = roles_users,
+        backref = db.backref('users', lazy = 'dynamic'))
+    games = db.relationship('Game', secondary = games_users,
         backref = db.backref('users', lazy = 'dynamic'))
