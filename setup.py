@@ -4,6 +4,7 @@
 # Load all app.models.* first, hooking them into db. Then call db.create_all().
 
 from app.models import db
+from app.models.friends import Friend
 from app.security import user_datastore
 from sys import argv
 
@@ -18,10 +19,23 @@ db.create_all()
 
 
 if command == 'test':
+
     # password: player-one
     user_datastore.create_user(email='player-one@chrislaskey.com',
         password='$2a$12$96vs6hmhJzBgi1fw4b6vIu87VuzMP2lFIcoIxTJ1U6h9m.AjuNDdO')
+
     # password: player-two
     user_datastore.create_user(email='player-two@chrislaskey.com',
         password='$2a$12$obgmmSNEhciOEbg.Ob1tAuFyopqA4/JsTt/V3OoD.QGkckp0Qc0FW')
+
+    # password: player-three
+    user_datastore.create_user(email='player-three@chrislaskey.com',
+        password='$2a$12$bSeMt/jhBiltPTxHHPzcHO/q.vaeN57l25RyFp4eDnow9jegOfEo6')
+
+    db.session.add_all([
+        Friend(user_id=1, friend_id=2),
+        Friend(user_id=2, friend_id=1),
+        Friend(user_id=1, friend_id=3)
+    ])
+
     db.session.commit()
