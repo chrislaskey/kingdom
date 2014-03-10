@@ -29,10 +29,16 @@ def save_create_game(form):
         name         = form.game_name.data,
         type         = form.game_type.data,
         description  = form.game_description.data,
-        date_created = datetime.utcnow()
+        date_created = datetime.utcnow(),
+        players      = get_players(form.game_players.data)
     )
     db_add(
         new_game,
         u'New game successfully created.',
         u'An error occured when trying to create new game.'
     )
+
+
+def get_players(player_emails):
+    player_emails.append(current_user.email)
+    return db.session.query(User).filter(User.email.in_(player_emails)).all()
