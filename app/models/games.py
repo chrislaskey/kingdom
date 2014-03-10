@@ -3,8 +3,8 @@ from . import db
 
 games_users = db.Table(
     'games_users',
-    db.Column('user_id', db.Integer(), db.ForeignKey('user.id')),
-    db.Column('game_id', db.Integer(), db.ForeignKey('game.id'))
+    db.Column('game_id', db.Integer(), db.ForeignKey('game.id')),
+    db.Column('user_id', db.Integer(), db.ForeignKey('user.id'))
 )
 
 
@@ -19,5 +19,8 @@ class Game(db.Model):
     type = db.Column(db.String(255))
     description = db.Column(db.Text())
     date_created = db.Column(db.DateTime())
-    players = db.relationship('User', secondary = games_users,
-        backref = db.backref('game', lazy = 'dynamic'))
+    players = db.relationship(
+        'User',
+        secondary = games_users,
+        backref = db.backref('game', lazy = 'dynamic')
+    )
