@@ -17,6 +17,25 @@
 		{{ render_field_with_errors(create_game_form.game_name) }}
 		{{ render_field_with_errors(create_game_form.game_type) }}
 		{{ render_field_with_errors(create_game_form.game_description) }}
+		<div class="field">
+
+			{{ create_game_form.game_players.label }}
+
+			<ul id="game_player_tags" class="ui blue labels">
+				{% if create_game_form.game_players.data %}
+					{% for player in create_game_form.game_players.data %}
+						<li>{{ player }}</li>
+					{% endfor %}
+				{% endif %}
+			</ul>
+
+			{% if create_game_form.game_players.errors %}
+				{% for error in create_game_form.game_players.errors %}
+					<div class="ui message yellow">{{ error }}</div>
+				{% endfor %}
+			{% endif %}
+
+		</div>
 		{{ render_field(create_game_form.submit) }}
 		<a href="/" class="ui button">Cancel</a>
 	</form>
