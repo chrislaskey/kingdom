@@ -50,6 +50,17 @@
 		}
 
 		$(function(){
+			$('#game_player_tags').tagit({
+				tags: [
+					{%- if current_user.friends -%}
+						{%- for friend in current_user.friends -%}
+							'{{ friend.friend.email }}',
+						{%- endfor -%}
+					{%- endif -%}
+				],
+				field: 'game_players'
+			});
+
 			styling.submit_field();
 		});
 
