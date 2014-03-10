@@ -1,7 +1,6 @@
 from flask import render_template
 from flask.ext.security import login_required, current_user
 from .. import app
-
 from .. models import db
 from .. models.games import Game
 from .. models.users import User
