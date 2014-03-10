@@ -15,6 +15,9 @@
   <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.js"></script>
   <script src="{{ url_for('static', filename='javascript/semantic.min.js') }}"></script>
 
+  {% block head %}
+  {% endblock %}
+
 </head>
 <body>
 	{% block body %}
