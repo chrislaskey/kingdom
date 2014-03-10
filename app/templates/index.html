@@ -4,6 +4,22 @@
 
 	{% include "partials/messages.html" %}
 
+	<h2>Games</h2>
+
+	<ul>
+	{% for game in games %}
+		<li>{{ game.name }}</li>
+	{% endfor %}
+	</ul>
+
 	<a href="/create-game" class="ui button orange"><i class="ui icon add"></i>New Game</a>
+
+	<h2>Friends</h2>
+
+	<ul>
+	{% for friend in current_user.friends %}
+		<li>{{ friend.user.email }}</li>
+	{% endfor %}
+	</ul>
 
 {% endblock %}
