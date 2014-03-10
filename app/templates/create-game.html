@@ -1,5 +1,12 @@
 {% extends "layouts/content.html" %}
 
+{% block head -%}
+
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/tagit.css') }}"/>
+  <script src="{{ url_for('static', filename='javascript/jquery.tagit.js') }}"></script>
+
+{%- endblock %}
+
 {% block content %}
 
 	<h2 class="ui header">Create Game</h2>
