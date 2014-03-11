@@ -9,13 +9,17 @@ from .. models.users import User
 @app.route('/')
 @login_required
 def index():
-    games = db.session.query(Game)\
-        .filter(Game.players.contains(current_user)).all()
     return render_template(
         'index.html',
         current_user = current_user,
-        games = games
+        is_first_login = is_first_login(),
+        games = get_games()
     )
+
+
+def get_games():
+    return db.session.query(Game)\
+        .filter(Game.players.contains(current_user)).all()
 
 
 from . import creategame
