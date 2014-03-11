@@ -6,7 +6,10 @@ from . roles import roles_users
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
-    email = db.Column(db.String(255), unique=True)
+    email = db.Column(db.Text(), unique=True)
+    screen_name = db.Column(db.Text(), unique=True)
+    first_name = db.Column(db.Text())
+    last_name = db.Column(db.Text())
     password = db.Column(db.String(255))
     active = db.Column(db.Boolean())
     confirmed_at = db.Column(db.DateTime())
