@@ -23,17 +23,26 @@ db.create_all()
 
 if command == 'test':
 
-    # password: player-one
-    user_datastore.create_user(email='player-one@chrislaskey.com',
-        password='$2a$12$96vs6hmhJzBgi1fw4b6vIu87VuzMP2lFIcoIxTJ1U6h9m.AjuNDdO')
+    user_datastore.create_user(
+        email='player-one@chrislaskey.com',
+        screen_name='player-one',
+        # password: player-one
+        password='$2a$12$96vs6hmhJzBgi1fw4b6vIu87VuzMP2lFIcoIxTJ1U6h9m.AjuNDdO'
+    )
 
-    # password: player-two
-    user_datastore.create_user(email='player-two@chrislaskey.com',
-        password='$2a$12$obgmmSNEhciOEbg.Ob1tAuFyopqA4/JsTt/V3OoD.QGkckp0Qc0FW')
+    user_datastore.create_user(
+        email='player-two@chrislaskey.com',
+        screen_name='player-two',
+        # password: player-two
+        password='$2a$12$obgmmSNEhciOEbg.Ob1tAuFyopqA4/JsTt/V3OoD.QGkckp0Qc0FW'
+    )
 
-    # password: player-three
-    user_datastore.create_user(email='player-three@chrislaskey.com',
-        password='$2a$12$bSeMt/jhBiltPTxHHPzcHO/q.vaeN57l25RyFp4eDnow9jegOfEo6')
+    user_datastore.create_user(
+        email='player-three@chrislaskey.com',
+        screen_name='player-three',
+        # password: player-three
+        password='$2a$12$bSeMt/jhBiltPTxHHPzcHO/q.vaeN57l25RyFp4eDnow9jegOfEo6'
+    )
 
     db.session.commit()
 
