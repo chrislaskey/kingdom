@@ -4,6 +4,17 @@
 
 	{% include "partials/messages.html" %}
 
+	{% if is_first_login and not current_user.first_name -%}
+	<div class="ui warning icon message">
+		<i class="info letter icon"></i>
+		<div class="content">
+			<div class="header">Welcome!</div>
+			<p>Make it easier for friends to find you by filling out your profile.</p>
+			<p><a class="ui button small" href="/profile/{{ current_user.id }}"><i class="ui icon user"></i>account details</a></p>
+		</div>
+	</div>
+	{%- endif %}
+
 	<h2>Games</h2>
 
 	<ul>
