@@ -174,7 +174,7 @@
                         var keyCode = event.which;
 
                         // enter key pressed
-                        if (keyCode == 13) {
+                        if (keyCode == 13 || keyCode == 9) {
                             if (autocomplete.is(".open")) {
                                 var selection = $("li.selected", autocomplete);
                                 if (selection.length) {
@@ -192,7 +192,8 @@
                             event.preventDefault();
                         } else
                         // tab key pressed
-                        // NOTE: disabled feature, tab-key creates new tag if it does not exist
+                        // NOTE: disabled feature, tab-key creates new tag if it does not exist.
+                        // Instead made tab use the same functionality as return key.
                         // if (keyCode == 9) {
                         //     if (tag) {
                         //         e.tagit("addTag", self.val());
