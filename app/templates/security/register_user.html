@@ -40,6 +40,14 @@
 				.append('<div class="ui corner label"><i class="icon asterisk"></i></div>');
 		}
 
+		styling.screen_name_field = function(){
+			$('input#screen_name')
+				.wrap('<div class="ui left labeled icon input"></div>')
+				.parent()
+				.append('<i class="user icon"></i>')
+				.append('<div class="ui corner label"><i class="icon asterisk"></i></div>');
+		}
+
 		styling.password_field = function(){
 			$('input#password')
 				.wrap('<div class="ui left labeled icon input"></div>')
@@ -63,6 +71,7 @@
 
 		$(function(){
 			styling.email_field();
+			styling.screen_name_field();
 			styling.password_field();
 			styling.password_confirm_field();
 			styling.submit_field();
