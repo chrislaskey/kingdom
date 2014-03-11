@@ -12,6 +12,7 @@
 						{% from "partials/login-macros.html" import render_field_with_errors, render_field %}
 						{{ register_user_form.hidden_tag() }}
 						{{ render_field_with_errors(register_user_form.email) }}
+						{{ render_field_with_errors(register_user_form.screen_name) }}
 						{{ render_field_with_errors(register_user_form.password) }}
 						{% if register_user_form.password_confirm %}
 							{{ render_field_with_errors(register_user_form.password_confirm) }}
