@@ -22,4 +22,8 @@ def get_games():
         .filter(Game.players.contains(current_user)).all()
 
 
+def is_first_login():
+    return current_user.last_login_at == current_user.current_login_at
+
+
 from . import creategame
